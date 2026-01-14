@@ -1,8 +1,8 @@
 
 export interface Question {
   id: number;
-  context: string;
-  statement: string;
+  axis: string;
+  content: string; // Unificado: Contexto + Enunciado em negrito
   options: {
     A: string;
     B: string;
@@ -11,7 +11,13 @@ export interface Question {
     E: string;
   };
   correctAnswer: keyof Question['options'];
-  axis: string;
+  optionExplanations: {
+    A: string;
+    B: string;
+    C: string;
+    D: string;
+    E: string;
+  };
 }
 
 export interface QuizState {
